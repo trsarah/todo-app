@@ -3,7 +3,7 @@
 This app is build using Next.js.
 
 1. install Node.js on your machine: https://nodejs.org/en/  
-2. create a Next.js application with `npx  create-neact-app todo_app` see https://nextjs.org/ 
+2. create a Next.js application with `npx  create-next-app todo_app` see https://nextjs.org/ 
 3. install Material UI dependencies  
    Material UI  
    `npm install @material-ui/core`  
