@@ -1,5 +1,5 @@
-import { Checkbox, ListItemSecondaryAction, ListItemText } from "@material-ui/core";
-import { DeleteOutlined } from "@mui/icons-material";
+import { Checkbox, ListItemSecondaryAction, ListItemText } from "@mui/material";
+import DeleteOutlined  from "@mui/icons-material/DeleteOutlined";
 import { IconButton, List, ListItem, Paper } from "@mui/material";
 
 export default function TodoList (props) {

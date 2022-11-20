@@ -88,7 +88,7 @@ export default function Home(todos) {
         </Grid>
         <Grid item>
           <TodoList todos={todos} onDelete={onDelete} onToggle={onToggle}/>
-        </Grid>
+        </Grid> 
       </Grid>
     </div>
   )

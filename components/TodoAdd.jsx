@@ -9,7 +9,7 @@ export default function TodoAdd (props) {
     const [inputValue, setInputValue] = React.useState("");
     return (
         <Grid container>
-                <Grid xs={10} md={11} item style={{ paddingRight: 16 }}>
+                <Grid  md={11} item style={{ paddingRight: 16 }}>
                     <TextField
                         placeholder="Add Todo here"
                         value={inputValue}
@@ -17,13 +17,12 @@ export default function TodoAdd (props) {
                         fullWidth                 
                     />
                 </Grid>
-                <Grid xs={2} md={1} item>
+                <Grid  md={1} item>
                     <Button
                         color="info"
                         variant="outlined"
                         onClick={() => onCreate(inputValue)}
                         sx={{
-                            margin: 3,
                             height: 55,
                         }}
                     >

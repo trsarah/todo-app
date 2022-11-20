@@ -5,11 +5,9 @@ This app is build using Next.js.
 1. install Node.js on your machine: https://nodejs.org/en/  
 2. create a Next.js application with `npx  create-next-app todo_app` see https://nextjs.org/ 
 3. install Material UI dependencies  
-   Material UI  
-   `npm install @material-ui/core`  
-   `npm install @mui/icons-material`   
-   `npm install @emotion/react`  
-   `npm install @emotion/styled` 
+   Material UI 
+   `npm install @mui/material @emotion/react @emotion/styled`
+   `npm install @mui/icons-material @mui/material @emotion/styled @emotion/react`
 4. for UUID generation: `npm install uuid`
 
 ##Docker build
@@ -61,3 +59,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# Update Nextjs
+see [how-to-update-next-js](https://medium.com/nextjs/how-to-update-next-js-old-version-to-the-latest-version-6870f1f1b8d1)
+
+```
+npm outdated
+npm outdated --global
+npm update -g create-next-app
+npm install -g create-next-app
+npm update
+
+--on error
+npm update --force
+ 
+ornpm update --legacy-peer-deps
+```
