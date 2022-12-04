@@ -14,11 +14,11 @@ export default function TodoList (props) {
                 {todos.list && todos.list.map((todo, idx) => {
                     return (
                         <ListItem key={todo.id} divider={idx !== todos.list.length - 1}>
-                            <Checkbox checked={todo.finished} onClick={() => onToggle(todo.id)}/>
+                            <Checkbox checked={todo.finished} onClick={() => onToggle(todo._id)}/>
                             <ListItemText>{todo.text}</ListItemText>
                             <ListItemText>{todo.dueDate}</ListItemText>
                             <ListItemSecondaryAction>
-                                <IconButton aria-label="Delete Todo" onClick={() => onDelete(todo.id)}>
+                                <IconButton aria-label="Delete Todo" onClick={() => onDelete(todo._id)}>
                                     <DeleteOutlined />
                                 </IconButton>
                             </ListItemSecondaryAction>

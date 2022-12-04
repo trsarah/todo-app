@@ -53,7 +53,7 @@ async function updateTodo(req, res) {
     console.log("update todo");
     console.log(req.body);
     let newTodo = JSON.parse(req.body);
-    let todo = todos.list.find(t => t.id === newTodo.id);
+    let todo = todos.list.find(t => t._id === newTodo._id);
     todo.text = newTodo.text;
     todo.finished = newTodo.finished;
 
@@ -66,7 +66,7 @@ async function updateTodo(req, res) {
 async function deleteTodo(req, res) {
     console.log("delete todo");
     let deleteTodo = JSON.parse(req.body);
-    var removeIndex = todos.list.map(item => item.id).indexOf(deleteTodo.id);
+    var removeIndex = todos.list.map(item => item._id).indexOf(deleteTodo._id);
     (removeIndex >= 0) && todos.list.splice(removeIndex, 1);
     return res.json({
         message: "",

@@ -6,13 +6,15 @@ import { useRouter } from 'next/router'
 import TodoAdd from '../components/TodoAdd'
 import { v4 as uuidv4 } from 'uuid';
 
+const storePath = 'todoStore';
+
 export default function Home(todos) {
   const router = useRouter();
 
   const onDelete = async (id) => {
     console.log("onDelete: " + id);
-    let todo = todos.list.find(t => t.id === id);
-    let response = await fetch('/api/todoStore', {
+    let todo = todos.list.find(t => t._id === id);
+    let response = await fetch('/api/' + storePath, {
       method: 'DELETE',
       body: JSON.stringify(todo),
     });
@@ -30,7 +32,7 @@ export default function Home(todos) {
   const onToggle = async (id) => {
     console.log("onToggle: " + id);
     if (todos.list) {
-      let todo = todos.list.find(t => t.id === id);
+      let todo = todos.list.find(t => t._id === id);
       let newTodo = {
         ...todo,
         finished: !todo.finished
@@ -38,7 +40,7 @@ export default function Home(todos) {
       console.log("newTodo:");
       console.log(newTodo);
   
-      let response = await fetch('/api/todoStore', {
+      let response = await fetch('/api/' + storePath, {
         method: 'PUT',
         body: JSON.stringify(newTodo),
       });
@@ -58,11 +60,11 @@ export default function Home(todos) {
     console.log("onCreate:");
     console.log(input);
     let todo = {
-      id: uuidv4(),
+      _id: uuidv4(),
       text: input,
       fsinished: false,
     }
-    let response = await fetch('/api/todoStore', {
+    let response = await fetch('/api/' + storePath, {
       method: 'POST',
       body: JSON.stringify(todo),
     });
@@ -103,7 +105,7 @@ export async function getServerSideProps(ctx) {
   console.log("SERVER_URL=" + SERVER_URL);
 
   // request posts from api
-  let response = await fetch(`${SERVER_URL}/api/todoStore`);
+  let response = await fetch(`${SERVER_URL}/api/` + storePath);
   // extract the data
   let data = await response.json();
 
